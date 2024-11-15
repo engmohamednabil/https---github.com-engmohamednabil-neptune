@@ -1,0 +1,30 @@
+<!-- <div>
+  <ul>  
+    <li><a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
+    <li><a routerLink="/product" routerLinkActive="active" ariaCurrentWhenActive="page">Product</a></li>
+    <li><a routerLink="/motor" routerLinkActive="active" ariaCurrentWhenActive="page">Motor</a></li>
+  </ul>
+</div> -->
+<div class="menu-container">
+  <ul class="menu">
+    <li class="menu-item" (click)="toggleSubMenu('product')">
+      Product
+      <ul class="sub-menu" *ngIf="activeMenu === 'product'">
+        <li class="sub-menu-item">
+          <a routerLink="/product" routerLinkActive="active">Main Products</a>
+        </li>
+        <li class="sub-menu-item">Other Products</li>
+      </ul>
+    </li>
+    <li class="menu-item" (click)="toggleSubMenu('motor')">
+      Motor
+      <ul class="sub-menu" *ngIf="activeMenu === 'motor'">
+        <li class="sub-menu-item">
+          <a routerLink="/motor" routerLinkActive="active">Top Models</a>
+        </li>
+        <li class="sub-menu-item">Other Models</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
