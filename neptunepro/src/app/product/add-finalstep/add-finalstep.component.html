@@ -1,0 +1,33 @@
+<h1 class="header">Review Product</h1>
+
+<div *ngIf="product" class="center-form">
+    <table>
+        <tr>
+            <td><p>Product Name: {{ product.ProductName }}</p></td>
+        </tr>
+    </table>
+</div>
+<form (ngSubmit)="saveAndClose()">
+    <div class="center-form">
+        <table>
+            <tr>
+              <td><label for="VersionCode">Version Code</label></td>
+              <td><input id="VersionCode" [(ngModel)]="product!.VersionCode" name="VersionCode" type="number"></td>
+            </tr>
+            <tr>
+              <td><label for="SalesCode">Sales Code</label></td>
+              <td><input id="SalesCode" [(ngModel)]="product!.SalesCode" name="SalesCode" type="number"></td>
+            </tr>
+            <tr>
+              <td><label for="RequireApprovals">Require Approvals</label></td>
+              <td>
+              <label><input type="radio" name="RequireApprovals" [(ngModel)]="product!.RequireApprovals" [value]="true" />Yes</label>
+              <label><input type="radio" name="RequireApprovals" [(ngModel)]="product!.RequireApprovals" [value]="false" />No</label>
+              </td>
+            </tr>
+            <tr>
+              <td><button type="submit">Save & Close</button></td>
+            </tr>
+        </table>
+    </div>
+</form>

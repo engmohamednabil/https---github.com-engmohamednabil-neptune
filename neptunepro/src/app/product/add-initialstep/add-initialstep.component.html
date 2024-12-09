@@ -1,0 +1,15 @@
+<h1 class="header">Set Product Data</h1>
+
+<form (ngSubmit)="nextStep()">
+    <div class="center-form">
+        <table>
+          <tr>
+            <td><label for="ProductName">Product Name</label></td>
+            <td><input id="ProductName" [(ngModel)]="product.ProductName" name="ProductName" required></td>
+          </tr>
+          <tr>
+            <td><button type="submit">Next</button></td>
+          </tr>
+        </table>
+      </div>
+  </form>
