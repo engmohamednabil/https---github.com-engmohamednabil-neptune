@@ -7,6 +7,7 @@ import { AddInitialstepComponent } from './product/add-initialstep/add-initialst
 import { AddFinalstepComponent } from './product/add-finalstep/add-finalstep.component';
 
 export const routes: Routes = [
+    { path: '', pathMatch:"full", component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'product', component: ProductComponent },
     { path: 'motor', component: MotorComponent },
