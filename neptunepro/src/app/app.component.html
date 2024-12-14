@@ -1,8 +1,13 @@
 <div class="menu-container">
-  <div class="company-info">
-    <img src="http://localhost:4200/home.png" alt="Logo"/>
-    <div class="company-text"> <a routerLink="/home">NEPTUNE</a></div>
+  <div>
+    <a class="company-text" routerLink="/home">NEPTUNE
+      <img src="home.png" alt="" width="30" height="24">
+    </a>
   </div>
+  <!-- <div class="company-info">
+    <img src="http://localhost:4200/home.png" alt="Logo"/>
+    <div class="company-text"><a routerLink="/home">NEPTUNE</a></div>
+  </div> -->
     <ul class="menu">
       <li class="menu-item" (click)="toggleSubMenu('product')">
         Product
