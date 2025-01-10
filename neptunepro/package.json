@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@swimlane/ngx-charts": "^21.1.2",
     "ag-grid-angular": "^32.3.3",
     "ag-grid-community": "^32.3.3",
     "bootstrap": "^5.3.3",
