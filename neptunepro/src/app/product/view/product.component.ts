@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
-import { ColDef, GridReadyEvent, GridApi, ColumnState } from 'ag-grid-community';
+import { ColDef, GridApi, ColumnState } from 'ag-grid-community';
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { IProduct } from '../../interfaces/IProduct';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product',
