@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { IProduct } from '../../interfaces/IProduct';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ProductStore } from '../product.store';
 
 @Component({
   selector: 'app-add-finalstep',
@@ -13,33 +14,37 @@ import { Router } from '@angular/router';
 })
 export class AddFinalstepComponent {
 
-  product!: IProduct;
-  constructor(private router: Router) {}
-
-  saveAndClose() {  
-  let existing = localStorage.getItem('products');
-  let products: IProduct[] = [];
-  if (existing) {  
-    products = JSON.parse(existing);
-
-  if(this.product){
-    products.push(this.product); 
-    localStorage.setItem('products', JSON.stringify(products));
-  }
-}
-  else{
-    products.push(this.product);
-    localStorage.setItem('products', JSON.stringify(products));
-  }
-  localStorage.removeItem('product');  
-  this.router.navigate(['/product']);
-}
+  product!: IProduct | null;
+  constructor(private router: Router, private productStore: ProductStore) {}
 
   ngOnInit() {
-    const productData = localStorage.getItem('product');
-    if (productData) {
-      this.product = JSON.parse(productData);
-      console.log('titleOnly: '+ productData);
+    
+    if (this.productStore.product()) {
+      this.product = this.productStore.product();
+      console.log('titleOnly: '+ this.product?.ProductName);
     }
   }
+  
+  saveAndClose() {  
+    let existing = localStorage.getItem('products');
+    let products: IProduct[] = [];
+      if (existing) {
+        
+        products = JSON.parse(existing);
+          if(this.product){
+            products.push(this.product); 
+            localStorage.setItem('products', JSON.stringify(products));
+          }
+      } 
+      else {
+        if(this.product !== null){
+          products.push(this.product);
+          localStorage.setItem('products', JSON.stringify(products));
+          }
+      }
+
+    this.productStore.removeProduct();
+    this.router.navigate(['/product']);
+  }
+
 }
