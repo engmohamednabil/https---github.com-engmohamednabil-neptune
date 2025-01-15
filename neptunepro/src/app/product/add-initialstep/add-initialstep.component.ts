@@ -3,7 +3,7 @@ import { IProduct } from '../../interfaces/IProduct';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { ProductStore } from './../product.store';
+import { ProductStore } from '../../store/product.store';
 
 @Component({
   selector: 'app-add-initialstep',

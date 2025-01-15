@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { IProduct } from '../../interfaces/IProduct';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ProductStore } from '../product.store';
+import { ProductStore } from '../../store/product.store';
 
 @Component({
   selector: 'app-add-finalstep',
